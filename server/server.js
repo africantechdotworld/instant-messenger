@@ -90,6 +90,6 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(port, () => {
+server.listen(8080, () => {
     console.log(`Server is up on port ${port}`);
 });
