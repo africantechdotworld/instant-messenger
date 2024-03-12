@@ -15,6 +15,11 @@ const server = http.createServer(app);
 const io = socketIO(server);
 const users = new Users();
 
+// Serve the Socket.IO client library
+app.get('/socket.io/socket.io.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '../node_modules/socket.io-client/dist/socket.io.js'));
+});
+
 app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
