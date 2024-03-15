@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080;
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIO(server);
+const io = require('socket.io').listen(server);
 const users = new Users();
 
 // Serve the Socket.IO client library
